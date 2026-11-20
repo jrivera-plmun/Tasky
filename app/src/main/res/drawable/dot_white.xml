@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/tasky_night_052" />
+    <size android:width="5dp" android:height="5dp" />
+</shape>

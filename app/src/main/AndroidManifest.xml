@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <application
+        android:name=".TaskyApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Tasky_Add_Mngmt">
+
+        <receiver android:name=".TaskReminderReceiver" android:exported="false" />
+        <receiver android:name=".TaskReminderBootReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+        <activity android:name=".WelcomeActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OrganizationActivity" android:exported="false"/>
+        <activity android:name=".DeadlinesActivity" android:exported="false"/>
+        <activity android:name=".OnboardingProgressActivity" android:exported="false"/>
+
+        <activity android:name=".MainActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".sign_inActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".create_accActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".HomeDashboardActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".TaskManagementActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".AddTaskActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".EditTaskActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".FocusSessionActivity" android:exported="false"/>
+        <activity android:name=".TaskDetailsActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".CalendarActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".TaskProgressActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".WorkloadMonitoringActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".ProfileActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".EditProfileActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".PersonalInformationActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+    </application>
+</manifest>

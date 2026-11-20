@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_navigation"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@color/tasky_night_019"
+    android:elevation="8dp"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp">
+
+    
+    <LinearLayout
+        android:id="@+id/nav_item_home"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/nav_icon_home"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_home"
+            app:tint="@color/tasky_night_020"
+            android:contentDescription="@string/nav_home"/>
+
+        <TextView
+            android:id="@+id/nav_label_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_home"
+            android:textSize="12sp"
+            android:textColor="@color/tasky_night_021"
+            android:layout_marginTop="3dp"/>
+    </LinearLayout>
+
+    
+    <LinearLayout
+        android:id="@+id/nav_item_tasks"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/nav_icon_tasks"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_tasks"
+            app:tint="@color/tasky_night_022"
+            android:contentDescription="@string/nav_tasks"/>
+
+        <TextView
+            android:id="@+id/nav_label_tasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_tasks"
+            android:textSize="12sp"
+            android:textColor="@color/tasky_night_023"
+            android:layout_marginTop="3dp"/>
+    </LinearLayout>
+
+    
+    <LinearLayout
+        android:id="@+id/nav_item_calendar"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/nav_icon_calendar"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_calendar"
+            app:tint="@color/tasky_night_022"
+            android:contentDescription="@string/nav_calendar"/>
+
+        <TextView
+            android:id="@+id/nav_label_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_calendar"
+            android:textSize="12sp"
+            android:textColor="@color/tasky_night_023"
+            android:layout_marginTop="3dp"/>
+    </LinearLayout>
+
+    
+    <LinearLayout
+        android:id="@+id/nav_item_progress"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/nav_icon_progress"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_progress"
+            app:tint="@color/tasky_night_022"
+            android:contentDescription="@string/nav_progress"/>
+
+        <TextView
+            android:id="@+id/nav_label_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_progress"
+            android:textSize="12sp"
+            android:textColor="@color/tasky_night_023"
+            android:layout_marginTop="3dp"/>
+    </LinearLayout>
+
+    
+    <LinearLayout
+        android:id="@+id/nav_item_profile"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/nav_icon_profile"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_profile"
+            app:tint="@color/tasky_night_022"
+            android:contentDescription="@string/nav_profile"/>
+
+        <TextView
+            android:id="@+id/nav_label_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_profile"
+            android:textSize="12sp"
+            android:textColor="@color/tasky_night_023"
+            android:layout_marginTop="3dp"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootWelcome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_bg">
+
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/screenContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/screen_margin"
+        android:background="@drawable/bg_screen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        
+        <ScrollView
+            android:id="@+id/scrollContent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@id/pageDots"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:paddingStart="@dimen/content_padding"
+                android:paddingTop="@dimen/content_padding"
+                android:paddingEnd="@dimen/content_padding"
+                android:paddingBottom="@dimen/content_padding">
+
+                
+                <LinearLayout
+                    android:id="@+id/logoRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@id/tvTagline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.4"
+                    app:layout_constraintVertical_chainStyle="packed">
+
+                    <ImageView
+                        android:id="@+id/imgLogo"
+                        android:layout_width="@dimen/logo_size"
+                        android:layout_height="@dimen/logo_size"
+                        android:contentDescription="@string/cd_logo"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/app_mark" />
+
+                    <TextView
+                        android:id="@+id/tvBrand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="@string/app_name"
+                        android:textColor="@color/primary_purple"
+                        android:textSize="@dimen/text_brand"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                
+                <TextView
+                    android:id="@+id/tvTagline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="@string/tagline"
+                    android:textColor="@color/dark_text"
+                    android:textSize="@dimen/text_tagline"
+                    app:layout_constraintBottom_toTopOf="@id/illustration"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/logoRow" />
+
+                
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/illustration"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="32dp"
+                    android:clipChildren="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="H,1:1.08"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTagline">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gBlobStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gBlobEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.92" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gBlobTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.13" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gCardStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.12" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gCardEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gCardTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.12" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gBadgeTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gDotTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.08" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gDotStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.86" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gYellowTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.72" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gPillTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.84" />
+
+                    
+                    <View
+                        android:id="@+id/blob"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@drawable/bg_blob"
+                        app:layout_constraintDimensionRatio="H,1:1"
+                        app:layout_constraintEnd_toEndOf="@id/gBlobEnd"
+                        app:layout_constraintStart_toStartOf="@id/gBlobStart"
+                        app:layout_constraintTop_toTopOf="@id/gBlobTop" />
+
+                    
+                    <View
+                        android:id="@+id/yellowDot"
+                        android:layout_width="@dimen/yellow_dot_size"
+                        android:layout_height="@dimen/yellow_dot_size"
+                        android:background="@drawable/bg_yellow_dot"
+                        app:layout_constraintStart_toStartOf="@id/gDotStart"
+                        app:layout_constraintTop_toTopOf="@id/gDotTop" />
+
+                    
+                    <LinearLayout
+                        android:id="@+id/taskCard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_task_card"
+                        android:elevation="@dimen/card_elevation"
+                        android:orientation="vertical"
+                        android:padding="@dimen/card_padding"
+                        android:rotation="-8"
+                        app:layout_constraintEnd_toEndOf="@id/gCardEnd"
+                        app:layout_constraintStart_toStartOf="@id/gCardStart"
+                        app:layout_constraintTop_toTopOf="@id/gCardTop">
+
+                        
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="@string/card_title"
+                            android:textColor="@color/dark_text"
+                            android:textSize="@dimen/text_card_title"
+                            android:textStyle="bold"
+                            app:drawableEndCompat="@drawable/ic_sparkle" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/check_size"
+                    android:layout_height="@dimen/check_size"
+                    android:background="@drawable/bg_check_done"
+                    android:contentDescription="@string/cd_checked"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_check" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/task_1"
+                        android:textColor="@color/dark_text"
+                        android:textSize="@dimen/text_card_item" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line_height"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_line" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/check_size"
+                    android:layout_height="@dimen/check_size"
+                    android:background="@drawable/bg_check_done"
+                    android:contentDescription="@string/cd_checked"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_check" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/task_2"
+                        android:textColor="@color/dark_text"
+                        android:textSize="@dimen/text_card_item" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line_height"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_line" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/check_size"
+                    android:layout_height="@dimen/check_size"
+                    android:background="@drawable/bg_check_empty"
+                    android:contentDescription="@string/cd_unchecked" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/task_3"
+                        android:textColor="@color/dark_text"
+                        android:textSize="@dimen/text_card_item" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line_height"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_line" />
+                </LinearLayout>
+            </LinearLayout>
+
+                        
+                        <ProgressBar
+                            android:id="@+id/progressTasks"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/progress_height"
+                            android:layout_marginTop="16dp"
+                            android:contentDescription="@string/cd_progress"
+                            android:max="100"
+                            android:progress="45"
+                            android:progressDrawable="@drawable/progress_bar" />
+                    </LinearLayout>
+
+                    
+                    <ImageView
+                        android:id="@+id/badgeCalendar"
+                        android:layout_width="@dimen/badge_blue_size"
+                        android:layout_height="@dimen/badge_blue_size"
+                        android:background="@drawable/bg_badge_blue"
+                        android:contentDescription="@string/cd_calendar"
+                        android:elevation="10dp"
+                        android:padding="12dp"
+                        android:rotation="-12"
+                        android:src="@drawable/ic_calendar"
+                        app:layout_constraintStart_toStartOf="@id/gBlobStart"
+                        app:layout_constraintTop_toTopOf="@id/gBadgeTop" />
+
+                    
+                    <ImageView
+                        android:id="@+id/badgeDone"
+                        android:layout_width="@dimen/badge_yellow_size"
+                        android:layout_height="@dimen/badge_yellow_size"
+                        android:background="@drawable/bg_badge_yellow"
+                        android:contentDescription="@string/cd_done_badge"
+                        android:elevation="10dp"
+                        android:padding="14dp"
+                        android:rotation="12"
+                        android:src="@drawable/ic_double_check"
+                        app:layout_constraintEnd_toEndOf="@id/gCardEnd"
+                        app:layout_constraintTop_toTopOf="@id/gYellowTop" />
+
+                    
+                    <TextView
+                        android:id="@+id/pill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_pill"
+                        android:drawablePadding="8dp"
+                        android:elevation="6dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center_vertical"
+                        android:paddingStart="14dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="10dp"
+                        android:rotation="-6"
+                        android:text="@string/pill_text"
+                        android:textColor="@color/dark_text"
+                        android:textSize="@dimen/text_pill"
+                        app:drawableStartCompat="@drawable/ic_lightning"
+                        app:layout_constraintStart_toStartOf="@id/gBlobStart"
+                        app:layout_constraintTop_toTopOf="@id/gPillTop" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        
+        <LinearLayout
+            android:id="@+id/pageDots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/cd_page_indicator"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/tvFooter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <View
+                android:layout_width="@dimen/dot_size"
+                android:layout_height="@dimen/dot_size"
+                android:background="@drawable/bg_dot_active" />
+
+            <View
+                android:layout_width="@dimen/dot_size"
+                android:layout_height="@dimen/dot_size"
+                android:layout_marginStart="@dimen/dot_gap"
+                android:background="@drawable/bg_dot_mid" />
+
+            <View
+                android:layout_width="@dimen/dot_size"
+                android:layout_height="@dimen/dot_size"
+                android:layout_marginStart="@dimen/dot_gap"
+                android:background="@drawable/bg_dot_light" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvFooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"
+            android:text="@string/footer_text"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/text_footer"
+            app:layout_constraintBottom_toTopOf="@id/gestureBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        
+        <View
+            android:id="@+id/gestureBar"
+            android:layout_width="@dimen/gesture_width"
+            android:layout_height="@dimen/gesture_height"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_gesture"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

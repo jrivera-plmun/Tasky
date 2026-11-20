@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+
+    <style name="Widget.App.Label" parent="">
+        <item name="android:textSize">@dimen/text_label</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:paddingBottom">@dimen/spacing_sm</item>
+    </style>
+
+    <style name="Widget.App.Caption" parent="">
+        <item name="android:textSize">@dimen/text_caption</item>
+        <item name="android:textColor">@color/muted</item>
+    </style>
+
+    <style name="Widget.App.Error" parent="Widget.App.Caption">
+        <item name="android:textColor">@color/error_red</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="Widget.App.EditText" parent="">
+        <item name="android:background">@drawable/bg_input</item>
+        <item name="android:padding">@dimen/spacing_lg</item>
+        <item name="android:textSize">@dimen/text_input</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textColorHint">@color/hint</item>
+    </style>
+
+    <style name="Widget.App.Chip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/chip_bg_state</item>
+        <item name="android:textColor">@color/chip_text</item>
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="chipCornerRadius">@dimen/radius_chip</item>
+        <item name="chipMinHeight">36dp</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="chipIconVisible">false</item>
+        <item name="rippleColor">@color/purple_light</item>
+    </style>
+
+    <style name="Widget.App.Priority" parent="">
+        <item name="android:background">@drawable/bg_priority</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/spacing_md</item>
+        <item name="android:paddingBottom">@dimen/spacing_md</item>
+        <item name="android:drawablePadding">@dimen/spacing_xs</item>
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:textColor">@color/priority_content</item>
+        <item name="android:drawableTint">@color/priority_content</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="Widget.App.Picker" parent="">
+        <item name="android:background">@drawable/bg_picker</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">@dimen/spacing_md</item>
+        <item name="android:paddingEnd">@dimen/spacing_md</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="Widget.App.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/purple</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">@dimen/radius_picker</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <style name="Widget.App.Button.Secondary" parent="Widget.App.Button.Primary">
+        <item name="backgroundTint">@color/purple_soft</item>
+        <item name="android:textColor">@color/purple</item>
+        <item name="elevation">0dp</item>
+    </style>
+    <style name="TextStyle_15sp">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#FF25223D</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_11sp">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">#FF7A778F</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_27sp">
+        <item name="android:textSize">27sp</item>
+        <item name="android:textColor">#FF25223D</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_12sp">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#FF7A778F</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_14sp">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FF7656DB</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_24sp">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_20sp">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#FF25223D</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_10sp">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#FFC65B78</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_9sp">
+        <item name="android:textSize">9sp</item>
+        <item name="android:textColor">#FF7A778F</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_13sp">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#FF7656DB</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+<style name="WeekdayHeader">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="LegendLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">14dp</item>
+        <item name="android:drawablePadding">6dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+    <style name="MonthPickerItem">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_week_chip_normal</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+<style name="Widget.App.BackButton" parent="">
+        <item name="android:layout_width">@dimen/back_button_size</item>
+        <item name="android:layout_height">@dimen/back_button_size</item>
+        <item name="android:padding">@dimen/back_button_padding</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:src">@drawable/ic_back</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:contentDescription">Back</item>
+    </style>
+<style name="Tasky" parent="" />
+<style name="Tasky.Brand"><item name="android:textSize">12sp</item><item name="android:textStyle">bold</item><item name="android:textColor">@color/primary</item></style><style name="Tasky.Caption"><item name="android:textSize">12sp</item><item name="android:textColor">@color/text_secondary</item></style><style name="Tasky.CardAction"><item name="android:textSize">12sp</item><item name="android:textColor">@color/primary</item><item name="android:textStyle">bold</item></style><style name="Tasky.CardTitle"><item name="android:textSize">16sp</item><item name="android:textColor">@color/text_primary</item><item name="android:textStyle">bold</item></style><style name="Tasky.Date"><item name="android:textSize">11sp</item><item name="android:textColor">@color/text_secondary</item></style><style name="Tasky.Progress"><item name="android:progressTint">@color/primary</item><item name="android:progressBackgroundTint">#E8E4F3</item></style><style name="Tasky.ScreenTitle"><item name="android:textSize">25sp</item><item name="android:textColor">@color/text_primary</item><item name="android:textStyle">bold</item></style><style name="Tasky.Subtitle"><item name="android:textSize">13sp</item><item name="android:textColor">@color/text_secondary</item></style><style name="Widget.Tasky.Card" parent="Widget.MaterialComponents.CardView"><item name="cardBackgroundColor">@color/surface</item><item name="cardCornerRadius">18dp</item><item name="cardElevation">1dp</item><item name="strokeColor">#EEEAF5</item><item name="strokeWidth">1dp</item></style></resources>

@@ -1,0 +1,1821 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="TooManyViews"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tasky_night_037">
+
+    
+    <ScrollView
+        android:id="@+id/dashboard_scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        
+        <LinearLayout
+            android:id="@+id/dashboard_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="22dp"
+            android:paddingTop="20dp"
+            android:paddingRight="22dp"
+            android:paddingBottom="32dp">
+
+            
+            <LinearLayout
+                android:id="@+id/home_focus_hero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp"
+                android:layout_marginBottom="18dp"
+                android:background="@drawable/bg_home_focus_hero">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TODAY'S FOCUS"
+                    android:textStyle="bold"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.1"
+                    android:textColor="#E9DFFF" />
+                <TextView
+                    android:id="@+id/home_focus_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Make progress on what matters."
+                    android:textSize="20sp"
+                    android:lineSpacingExtra="2dp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF" />
+                <TextView
+                    android:id="@+id/home_focus_subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Your task overview"
+                    android:textSize="12sp"
+                    android:textColor="#F0E9FF" />
+                <TextView
+                    android:id="@+id/home_focus_action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_home_focus_action"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Open schedule planner  →"
+                    android:textColor="#5130A7"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+            
+            <LinearLayout
+                android:id="@+id/personal_greeting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/greeting"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/current_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:gravity="start"
+                        android:text="@string/current_date"
+                        android:textColor="@color/tasky_night_023"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/hello"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:gravity="start"
+                        android:text="@string/hello"
+                        android:textColor="@color/tasky_night_038"
+                        android:textSize="27sp" />
+
+                    <TextView
+                        android:id="@+id/supporting_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:gravity="start"
+                        android:text="@string/supporting_text"
+                        android:textColor="@color/tasky_night_023"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                
+                <FrameLayout
+                    android:id="@+id/profile"
+                    android:layout_width="43dp"
+                    android:layout_height="43dp"
+                    android:background="@drawable/bg_rounded_profile">
+
+                    <TextView
+                        android:id="@+id/initials"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/inter"
+                        android:gravity="center"
+                        android:text="@string/initials"
+                        android:textColor="@color/tasky_night_021"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/online_indicator"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_gravity="top|end"
+                        android:contentDescription="@null"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_online_indicator" />
+                </FrameLayout>
+            </LinearLayout>
+
+            
+            <LinearLayout
+                android:id="@+id/your_progress_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_rounded_your_progress"
+                android:minHeight="90dp"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <LinearLayout
+                    android:id="@+id/progress_information"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/progress_copy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/your_progress_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter"
+                            android:gravity="start"
+                            android:text="@string/your_progress"
+                            android:textColor="@color/tasky_night_039"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/progress_subtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter"
+                            android:gravity="start"
+                            android:text="@string/tasks_completed_this_week_subtitle"
+                            android:textColor="@color/tasky_night_040"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/progress_percentage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:gravity="start"
+                        android:text="@string/progress_42_percent"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/progress_track_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_rounded_progress_track"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/completed_progress"
+                        android:layout_width="100dp"
+                        android:layout_height="6dp"
+                        android:background="@drawable/bg_rounded_completed_progress"
+                        android:orientation="horizontal" />
+                </LinearLayout>
+            </LinearLayout>
+
+            
+            <LinearLayout
+                android:id="@+id/task_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                
+                <LinearLayout
+                    android:id="@+id/summary_row_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/task_summary_total"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="#FFF0EBFF"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/tasky_night_041"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="14dp">
+
+
+                            <ImageView
+                                android:id="@+id/vector_layers"
+                                android:layout_width="19dp"
+                                android:layout_height="19dp"
+                                android:layout_marginEnd="4dp"
+                                android:contentDescription="@null"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_total_tasks" />
+
+                            <LinearLayout
+                                android:id="@+id/metric_total"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/count_total"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/total_tasks_count"
+                                    android:textColor="#25223D"
+                                    android:textSize="24sp" />
+
+                                <TextView
+                                    android:id="@+id/label_total"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/inter"
+                                    android:maxLines="1"
+                                    android:text="@string/total_tasks_label"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/task_summary_pending"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="#FFEDF3FF"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/tasky_night_042"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="14dp">
+
+
+                            <ImageView
+                                android:id="@+id/vector_hourglass"
+                                android:layout_width="13dp"
+                                android:layout_height="19dp"
+                                android:layout_marginEnd="10dp"
+                                android:contentDescription="@null"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_hourglass" />
+
+                            <LinearLayout
+                                android:id="@+id/metric_pending"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/count_pending"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/pending_count"
+                                    android:textColor="#25223D"
+                                    android:textSize="24sp" />
+
+                                <TextView
+                                    android:id="@+id/label_pending"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/inter"
+                                    android:maxLines="1"
+                                    android:text="@string/pending_label"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                
+                <LinearLayout
+                    android:id="@+id/summary_row_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/task_summary_completed"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="#FFE7F6EF"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/tasky_night_043"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="14dp">
+
+
+                            <ImageView
+                                android:id="@+id/vector_circle_check"
+                                android:layout_width="19dp"
+                                android:layout_height="19dp"
+                                android:layout_marginEnd="4dp"
+                                android:contentDescription="@null"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_check" />
+
+                            <LinearLayout
+                                android:id="@+id/metric_completed"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/count_completed"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/completed_count"
+                                    android:textColor="#25223D"
+                                    android:textSize="24sp" />
+
+                                <TextView
+                                    android:id="@+id/label_completed"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/inter"
+                                    android:maxLines="1"
+                                    android:text="@string/completed_label"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/task_summary_overdue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="#FFFBE8EF"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/tasky_night_044"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="14dp">
+
+
+                            <ImageView
+                                android:id="@+id/vector_alarm_clock"
+                                android:layout_width="19dp"
+                                android:layout_height="17dp"
+                                android:layout_marginEnd="4dp"
+                                android:contentDescription="@null"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_red_calendar" />
+
+                            <LinearLayout
+                                android:id="@+id/metric_overdue"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/count_overdue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/overdue_count"
+                                    android:textColor="#25223D"
+                                    android:textSize="24sp" />
+
+                                <TextView
+                                    android:id="@+id/label_overdue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/inter"
+                                    android:maxLines="1"
+                                    android:text="@string/overdue_label"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </LinearLayout>
+
+            
+            <LinearLayout
+                android:id="@+id/today_s_tasks_container"
+                android:clipChildren="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/section_heading_today"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/today_s_tasks_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/today_s_tasks"
+                        android:textColor="@color/tasky_night_038"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/today_tasks_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/tasks_count_4"
+                        android:textColor="@color/tasky_night_021"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/task_card_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#FFFFFFFF"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/tasky_night_045"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:padding="15dp">
+
+
+                        <FrameLayout
+                            android:id="@+id/completion_control_1"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:background="@drawable/bg_checkbox_unselected"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:id="@+id/completion_check_1"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:visibility="gone"
+                                android:src="@drawable/ic_check"
+                                app:tint="@color/tasky_night_046" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/task_details_1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/task_metadata_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/personal_tag_1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/personal"
+                                    android:textColor="@color/tasky_night_047"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/high_priority_1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_ellipse"
+                                    android:drawablePadding="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/high_priority"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/pay_electricity_bill"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/inter"
+                                android:text="@string/pay_electricity_bill"
+                                android:textColor="@color/tasky_night_038"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/time_details_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/vector_calendar_1"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_red_calendar" />
+
+                                <TextView
+                                    android:id="@+id/oct_27_overdue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/oct_27_overdue_text"
+                                    android:textColor="@color/tasky_night_047"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/dot_separator_1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/dot_separator"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/vector_clock_1"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_clock" />
+
+                                <TextView
+                                    android:id="@+id/task_duration_10min"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/duration_10_min"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/task_card_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#FFFFFFFF"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/tasky_night_045"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:padding="15dp">
+
+
+                        <FrameLayout
+                            android:id="@+id/completion_control_2"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:background="@drawable/bg_checkbox_unselected"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:id="@+id/completion_check_2"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:visibility="gone"
+                                android:src="@drawable/ic_check"
+                                app:tint="@color/tasky_night_046" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/task_details_2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/task_metadata_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/work_tag_1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/work"
+                                    android:textColor="@color/tasky_night_021"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/high_priority_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_ellipse"
+                                    android:drawablePadding="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/high_priority"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/send_project_proposal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/inter"
+                                android:text="@string/send_project_proposal"
+                                android:textColor="@color/tasky_night_038"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/time_details_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/vector_calendar_2"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_calendar" />
+
+                                <TextView
+                                    android:id="@+id/today_2_00_pm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/today_2_00_pm_text"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/dot_separator_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/dot_separator"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/vector_clock_2"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_clock" />
+
+                                <TextView
+                                    android:id="@+id/task_duration_45min"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/duration_45_min"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            
+                            <LinearLayout
+                                android:id="@+id/task_progress_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ProgressBar
+                                    android:id="@+id/progress_bar_2"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="4dp"
+                                    android:layout_weight="1"
+                                    android:max="100"
+                                    android:progress="50"
+                                    android:progressBackgroundTint="#FFEDE9F7"
+                                    android:progressTint="#FF7656DB" />
+
+                                <TextView
+                                    android:id="@+id/progress_label_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/progress_60_percent"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/task_card_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#FFFFFFFF"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/tasky_night_045"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:padding="15dp">
+
+
+                        <FrameLayout
+                            android:id="@+id/completion_control_3"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:background="@drawable/bg_checkbox_unselected"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:id="@+id/completion_check_3"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:visibility="gone"
+                                android:src="@drawable/ic_check"
+                                app:tint="@color/tasky_night_046" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/task_details_3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/task_metadata_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/study_tag_1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/study"
+                                    android:textColor="@color/tasky_night_048"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/medium_priority_1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_ellipse"
+                                    android:drawablePadding="4dp"
+                                    android:drawableTint="#FF4C8DDB"
+                                    android:fontFamily="@font/inter"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/medium_priority"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/review_lecture_notes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/inter"
+                                android:text="@string/review_lecture_notes"
+                                android:textColor="@color/tasky_night_038"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/time_details_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/vector_calendar_3"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_calendar" />
+
+                                <TextView
+                                    android:id="@+id/today_5_00_pm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/today_5_00_pm_text"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/dot_separator_3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/dot_separator"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/vector_clock_3"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_clock" />
+
+                                <TextView
+                                    android:id="@+id/task_duration_30min"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/duration_30_min"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/task_card_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#FFFFFFFF"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/tasky_night_045"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:padding="15dp">
+
+
+                        <FrameLayout
+                            android:id="@+id/completion_control_4"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:background="@drawable/bg_rounded_completion_control"
+                            android:backgroundTint="@color/tasky_night_049"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:id="@+id/completion_check_4"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_check"
+                                app:tint="@color/tasky_night_046" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/task_details_4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/task_metadata_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/personal_tag_2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/personal"
+                                    android:textColor="@color/tasky_night_050"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/completed_status_1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_ellipse"
+                                    android:drawablePadding="4dp"
+                                    android:drawableTint="#FF3E9C74"
+                                    android:fontFamily="@font/inter"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/completed"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/plan_meals_for_the_week"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/inter"
+                                android:text="@string/plan_meals_for_the_week"
+                                android:textColor="@color/tasky_night_023"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/time_details_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/vector_calendar_4"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_calendar" />
+
+                                <TextView
+                                    android:id="@+id/today_9_00_am"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/today_9_00_am_text"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/dot_separator_4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/dot_separator"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/vector_clock_4"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_clock" />
+
+                                <TextView
+                                    android:id="@+id/task_duration_20min"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/duration_20_min"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            
+            <LinearLayout
+                android:id="@+id/workload_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_rounded_workload_indicator"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <LinearLayout
+                    android:id="@+id/workload_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/workload_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/workload"
+                        android:textColor="@color/tasky_night_038"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/moderate_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/moderate"
+                        android:textColor="@color/tasky_night_021"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/workload_levels"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/light_workload_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rounded_light_workload"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/light_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter"
+                            android:text="@string/light"
+                            android:textColor="@color/tasky_night_023"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/light_workload_tasks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter"
+                            android:text="@string/tasks_range_0_3"
+                            android:textColor="@color/tasky_night_023"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/moderate_workload_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rounded_moderate_workload"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/moderate_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter"
+                            android:text="@string/moderate"
+                            android:textColor="@color/tasky_night_021"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/moderate_workload_tasks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter"
+                            android:text="@string/tasks_range_4_6"
+                            android:textColor="@color/tasky_night_021"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/heavy_workload_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rounded_heavy_workload"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/heavy_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter"
+                            android:text="@string/heavy"
+                            android:textColor="@color/tasky_night_023"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/heavy_workload_tasks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter"
+                            android:text="@string/tasks_range_7_plus"
+                            android:textColor="@color/tasky_night_023"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            
+            <LinearLayout
+                android:id="@+id/upcoming_deadlines_container"
+                android:clipChildren="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/section_heading_upcoming"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/upcoming_deadlines_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/upcoming_deadlines"
+                        android:textColor="@color/tasky_night_038"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/upcoming_due_soon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/due_soon_3_count"
+                        android:textColor="@color/tasky_night_021"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/deadline_card_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#FFFFFFFF"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/tasky_night_045"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:padding="15dp">
+
+
+                        <FrameLayout
+                            android:id="@+id/deadline_control_1"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:background="@drawable/bg_checkbox_unselected"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:id="@+id/deadline_check_1"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:visibility="gone"
+                                android:src="@drawable/ic_check"
+                                app:tint="@color/tasky_night_046" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/deadline_details_1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/deadline_metadata_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/deadline_tag_1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/personal"
+                                    android:textColor="@color/tasky_night_047"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/deadline_priority_1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_ellipse"
+                                    android:drawablePadding="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/high_priority"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/deadline_title_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/inter"
+                                android:text="@string/pay_electricity_bill"
+                                android:textColor="@color/tasky_night_038"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/deadline_time_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/deadline_calendar_1"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_red_calendar" />
+
+                                <TextView
+                                    android:id="@+id/deadline_date_1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/oct_27_overdue_text"
+                                    android:textColor="@color/tasky_night_047"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/deadline_dot_1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/dot_separator"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/deadline_clock_1"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_clock" />
+
+                                <TextView
+                                    android:id="@+id/deadline_duration_1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/duration_10_min"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/deadline_card_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#FFFFFFFF"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/tasky_night_045"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:padding="15dp">
+
+
+                        <FrameLayout
+                            android:id="@+id/deadline_control_2"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:background="@drawable/bg_checkbox_unselected"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:id="@+id/deadline_check_2"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:visibility="gone"
+                                android:src="@drawable/ic_check"
+                                app:tint="@color/tasky_night_046" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/deadline_details_2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/deadline_metadata_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/deadline_tag_2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/work"
+                                    android:textColor="@color/tasky_night_021"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/deadline_priority_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_ellipse"
+                                    android:drawablePadding="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/high_priority"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/deadline_title_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/inter"
+                                android:text="@string/send_project_proposal"
+                                android:textColor="@color/tasky_night_038"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/deadline_time_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/deadline_calendar_2"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_calendar" />
+
+                                <TextView
+                                    android:id="@+id/deadline_date_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/today_2_00_pm_text"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/deadline_dot_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/dot_separator"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/deadline_clock_2"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_clock" />
+
+                                <TextView
+                                    android:id="@+id/deadline_duration_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/duration_45_min"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/deadline_progress_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ProgressBar
+                                    android:id="@+id/deadline_progress_bar_2"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="4dp"
+                                    android:layout_weight="1"
+                                    android:max="100"
+                                    android:progress="60"
+                                    android:progressBackgroundTint="#FFEDE9F7"
+                                    android:progressTint="#FF7656DB" />
+
+                                <TextView
+                                    android:id="@+id/deadline_progress_label_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/progress_60_percent"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/deadline_card_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#FFFFFFFF"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/tasky_night_045"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:padding="15dp">
+
+
+                        <FrameLayout
+                            android:id="@+id/deadline_control_3"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:background="@drawable/bg_checkbox_unselected"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:id="@+id/deadline_check_3"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:visibility="gone"
+                                android:src="@drawable/ic_check"
+                                app:tint="@color/tasky_night_046" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/deadline_details_3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/deadline_metadata_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/deadline_tag_3"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/study"
+                                    android:textColor="@color/tasky_night_048"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/deadline_priority_3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_ellipse"
+                                    android:drawablePadding="4dp"
+                                    android:drawableTint="#FF4C8DDB"
+                                    android:fontFamily="@font/inter"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/medium_priority"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/deadline_title_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/inter"
+                                android:text="@string/review_lecture_notes"
+                                android:textColor="@color/tasky_night_038"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/deadline_time_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/deadline_calendar_3"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_calendar" />
+
+                                <TextView
+                                    android:id="@+id/deadline_date_3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/today_5_00_pm_text"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/deadline_dot_3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/dot_separator"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/deadline_clock_3"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_clock" />
+
+                                <TextView
+                                    android:id="@+id/deadline_duration_3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:text="@string/duration_30_min"
+                                    android:textColor="@color/tasky_night_023"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    
+    <include
+        layout="@layout/bottom_navigation_bar"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
